@@ -1,0 +1,235 @@
+body {
+    // base
+    @include main_font_regular;
+    background-color: $backgroundBody;
+    
+    // custom
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2.4rem;
+}
+
+.card {
+
+    max-width: 35rem;
+    background-color: $darkBlueCard;
+    border-radius: 1.5rem;
+    box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
+
+    @include big_device {
+        padding: 2.4rem 2.4rem 3.2rem;
+    }
+
+    @include small_device {
+        padding: 2.4rem;
+    }
+
+    &__img {
+
+        position: relative;
+        border-radius: .8rem;
+        cursor: pointer;
+        
+        &:hover {
+            .overlay-img {
+                opacity: 1;
+            }
+
+            .overlay-bg {
+                opacity: .5;
+            }
+        }
+
+        .overlay-img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: .8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all .3s;
+
+            img {
+                width: 4.8rem;
+                height: auto;
+                display: block;
+            }
+
+        }
+
+        .overlay-bg {
+            position: absolute;
+            background-color: $cyan;
+            width: 100%;
+            height: 100%;
+            border-radius: .8rem;
+            opacity: 0;
+            transition: all .3s;
+
+            &:hover {
+                opacity: 0.5;
+            }
+
+        }
+
+        img {
+            @include img_responsive;
+            border-radius: .8rem;
+        }
+    }
+
+    &__title {
+        @include main_font_semibold;
+        color: white;
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+        margin-top: 2.4rem;
+        transition: all .3s;
+        cursor: pointer;
+
+        &:hover {
+            color: $cyan
+        }
+    }
+
+    &__desc {
+        @include main_font_light;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        color: $softBlue;
+
+        @include big_device {
+            margin-top: 1.6rem;
+        }
+    
+        @include small_device {
+            margin-top: 1.2rem;
+        }
+    }
+
+    &__data {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include big_device {
+            margin-top: 2.4rem;
+        }
+    
+        @include small_device {
+            margin-top: 1.6rem;
+        }
+
+        .crypto {
+            display: flex;
+            align-items: center;
+
+            &__img {
+                flex-basis: 1.1rem;
+                flex-grow: 0;
+                flex-shrink: 0;
+                margin-right: .648rem;
+            }
+
+            &__txt {
+
+                @include main_font_semibold;
+                color: $cyan;
+
+                @include big_device {
+                    font-size: 1.6rem;
+                }
+            
+                @include small_device {
+                    font-size: 1.5rem;
+                }
+                
+            }
+
+        }
+
+        .time {
+            display: flex;
+            align-items: center;
+
+            &__img {
+                flex-basis: 1.6rem;
+                flex-grow: 0;
+                flex-shrink: 0;
+                margin-right: .77rem;
+            }
+
+            &__txt {
+
+                color: $softBlue;
+                @include big_device {
+                    font-size: 1.6rem;
+                }
+            
+                @include small_device {
+                    font-size: 1.5rem;
+                }
+                
+            }
+
+        }
+
+    }
+
+    &__line {
+        background-color: $darkBlueLine;
+        height: 0.1rem;
+        
+
+        @include big_device {
+            margin-top: 2.4rem;
+        }
+    
+        @include small_device {
+            margin-top: 1.6rem;
+        }
+    }
+
+    &__author {
+
+        margin-top: 1.6rem;
+        display: flex;
+        align-items: center;
+
+        &__img {
+            width: 3.3rem;
+            margin-right: 1.6rem;
+
+            img{
+                @include img_responsive
+            }
+        }
+
+        &__txt {
+            
+            color: $softBlue;
+
+            @include big_device {
+                font-size: 1.6rem;
+            }
+        
+            @include small_device {
+                font-size: 1.5rem;
+            }
+
+            span {
+                color: white;
+                cursor: pointer;
+                transition: all .3s;
+                &:hover {
+                    color: $cyan
+                }
+            }
+        }
+    }
+
+}
