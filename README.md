@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [...](...)
+- Live Site URL: [https://antoru-nft-card-component.netlify.app/](https://antoru-nft-card-component.netlify.app/)
 
 ## My process
 
